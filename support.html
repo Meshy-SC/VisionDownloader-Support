@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <title>Support — Vision Downloader</title>
+  <meta name="description" content="Help with Vision Downloader: contact, how to report a problem, and answers to common questions." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="./">
+        <img src="assets/logo.png" alt="" />
+        Vision Downloader
+      </a>
+      <div class="nav-links">
+        <a href="./">Home</a>
+        <a href="support.html" class="active">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Support</h1>
+    <p class="subtitle">We're here to help you get the most out of Vision Downloader.</p>
+
+    <h2>Contact us</h2>
+    <p>
+      The fastest way to reach us is by email:
+      <a href="mailto:davinci.dalhi@gmail.com?subject=Vision%20Downloader%20Support">davinci.dalhi@gmail.com</a>.
+      For bug reports and feature requests, you can also open an issue on
+      <a href="https://github.com/Meshy-SC/VisionDownloader-Support/issues" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+
+    <h2>When you report a problem</h2>
+    <p>To help us fix things quickly, please include:</p>
+    <ul>
+      <li>Your Chrome version (Menu → Help → About Google Chrome)</li>
+      <li>The extension's version — it is at the bottom of the extension's window, for example <code>v0.4.0</code></li>
+      <li>What you were doing, what you expected, and what happened</li>
+      <li>
+        If a video is missing or a download fails: open the extension on that page, click
+        <strong>Missing a video?</strong>, then <strong>Copy diagnostics</strong>, and paste the result
+        into your message. It lists what the page loaded, so we can see what went wrong. Look it
+        over first: it contains the addresses of the page and its media.
+      </li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>A video plays on the page, but it isn't in the list.</summary>
+        <p>
+          Most players fetch the video only once it starts playing, so press Play and wait a moment;
+          let any ad finish first. If it still doesn't appear, open the extension, click
+          <strong>Missing a video?</strong> and then <strong>Reload and look again</strong>, which
+          reloads the page so every request is seen again.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why can't I download from YouTube?</summary>
+        <p>
+          YouTube does not allow its videos to be downloaded, and extensions in the Chrome Web Store
+          may not do it. On YouTube, and for YouTube players embedded in other sites, the extension
+          says so instead of offering a download.
+        </p>
+      </details>
+
+      <details>
+        <summary>A video says it is protected (DRM) and can't be downloaded.</summary>
+        <p>
+          Streaming services such as Netflix or Disney+ encrypt their video with DRM (Widevine,
+          PlayReady or FairPlay). No download can get past that, and Vision Downloader does not try:
+          it tells you before you click.
+        </p>
+      </details>
+
+      <details>
+        <summary>Which formats can I save as?</summary>
+        <p>
+          MP4 (the default), MKV, or the raw stream; or just the sound, as M4A (the original audio,
+          not re-encoded) or MP3. Streams are rewrapped without re-encoding, so the picture is
+          exactly what the site sent.
+        </p>
+      </details>
+
+      <details>
+        <summary>Where do my downloads go?</summary>
+        <p>
+          To your Downloads folder, or to the last folder you chose with <strong>Save as…</strong>
+          in the menu beside the Download button. Names and folders can follow rules of your own:
+          Settings → File names and folders.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I get subtitles, or another audio language?</summary>
+        <p>
+          Yes, when the site offers them: the video's card shows a Subtitles row and, for videos with
+          several languages, an Audio row. Subtitles are added to the MP4 or saved as an
+          <code>.srt</code> file beside it. Set the languages you prefer in the settings.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I record a live stream?</summary>
+        <p>
+          Yes. A live stream's card says <strong>LIVE</strong> and its button says
+          <strong>Record</strong>. Press <strong>Stop</strong> to save what was recorded, or
+          <strong>Discard</strong> to throw it away.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does it cost anything?</summary>
+        <p>No. Vision Downloader is free, with no limits on how much you download.</p>
+      </details>
+
+      <details>
+        <summary>Is my data collected?</summary>
+        <p>
+          No. Nothing about you is collected or sent to us. See the
+          <a href="privacy.html">Privacy Policy</a>.
+        </p>
+      </details>
+    </div>
+
+    <p style="margin-top: 28px;">
+      Please download only what you have the right to keep: many sites' terms forbid downloading
+      their videos.
+    </p>
+
+    <p style="margin-top: 28px;">
+      <a class="button" href="mailto:davinci.dalhi@gmail.com?subject=Vision%20Downloader%20Support">Email support</a>
+      <a class="button button-secondary" href="https://github.com/Meshy-SC/VisionDownloader-Support/issues" target="_blank" rel="noopener" style="margin-left: 8px;">Open a GitHub issue</a>
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">Vision Downloader</div>
+    <div>
+      <a href="./">Home</a>·
+      <a href="support.html">Support</a>·
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div style="margin-top: 12px;">© 2026 Vision Downloader</div>
+  </footer>
+
+</body>
+</html>
