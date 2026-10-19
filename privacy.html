@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
   <title>Privacy Policy — Vision Downloader</title>
-  <meta name="description" content="Vision Downloader privacy policy — it collects nothing about you and sends nothing to us." />
+  <meta name="description" content="Vision Downloader privacy policy — what it handles on your computer to find and save videos, and why it sends nothing to us." />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="apple-touch-icon" href="assets/logo.png" />
   <link rel="stylesheet" href="assets/style.css" />
@@ -28,15 +28,17 @@
 
   <main class="container">
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: October 7, 2026 · Last updated: October 9, 2026</p>
+    <p class="meta">Effective date: October 7, 2026 · Last updated: October 19, 2026</p>
 
     <div class="callout">
       <strong class="callout-title">The short version</strong>
       <p>
-        Vision Downloader collects nothing about you and sends nothing to us. It has no accounts, no
-        analytics, no advertising and no tracking. It reads the pages you visit only to find their
-        videos, keeps your settings and download history in your browser, and talks only to the
-        sites you download from. This page explains the details.
+        Vision Downloader works on your computer and nowhere else. To find and save videos it reads
+        the pages you visit — the requests they make for video, their titles and a few frames, and a
+        site's sign-in token when the site's player sends one — and it keeps your settings and
+        download history in your browser. It sends nothing to us: there are no accounts, no
+        analytics, no advertising and no tracking. It talks only to the sites whose videos it finds.
+        This page explains the details.
       </p>
     </div>
 
@@ -47,6 +49,8 @@
         <li><a href="#reads">What the extension reads</a></li>
         <li><a href="#keeps">What it keeps, on your computer</a></li>
         <li><a href="#sends">What it sends, and to whom</a></li>
+        <li><a href="#diagnostics">Diagnostics you copy</a></li>
+        <li><a href="#limited-use">How the information is used</a></li>
         <li><a href="#permissions">Why it asks for its permissions</a></li>
         <li><a href="#children">Children</a></li>
         <li><a href="#rights">Your choices</a></li>
@@ -65,20 +69,47 @@
     <ul>
       <li>
         <strong>The pages you visit, to find their videos:</strong> which requests a page makes for
-        video, audio, playlists and subtitles; the headers the site's own player sends with them;
-        and the page's title, its video poster and a few frames of the video that is playing, to
-        name and preview each video in the list. This stays in your browser's memory while the tab
-        is open, and is not written anywhere.
+        video, audio, playlists and subtitles, and the headers the site's own player sends with
+        them; the page's title and address, its video poster and a few frames of the video that is
+        playing, to name and preview each video in the list; and the player's settings in the
+        page's scripts, which often name a video before it plays.
+      </li>
+      <li>
+        <strong>A site's sign-in token, when its player sends one.</strong> Some players add a token
+        to every request for their video (for example in an "Authorization" header), and the
+        site's server refuses the video without it. The extension sends that token back only to
+        the server it came from, only for a download you asked for. It never writes the token to
+        your disk, never puts it in diagnostics and never sends it anywhere else.
+      </li>
+      <li>
+        <strong>One piece of a page's text, if you ask for it:</strong> when one of your file-name
+        rules names a part of a page to take a title from, the extension reads that part's text
+        (at most 200 characters) to name the file.
       </li>
     </ul>
+    <p>
+      All of this is held in your browser's memory, tab by tab. Some of it is kept in the browser's
+      session storage, which also lives in memory, so that a video still on the page is not lost
+      when the extension restarts in the background. Closing a tab drops what was read there, and
+      the browser clears the rest when it closes. None of it is written to your disk.
+    </p>
+    <p>
+      For each site, the extension also remembers which way of asking its server for a video
+      worked — for example, naming the page or the player as the referrer — so that the next
+      download from that site asks the same way first. This holds the server's name and the way
+      that worked — no address of a page or video, and no token — stays in memory until the
+      browser closes, and is never taken from a private (incognito) window.
+    </p>
 
     <h2 id="keeps">3. What it keeps, on your computer</h2>
     <ul>
-      <li>Your settings.</li>
+      <li>Your settings, including the folder you picked with Save as…, if you picked one: its
+        name, and your browser's permission to save files into it.</li>
       <li>
-        A history of your downloads — file name, site, page address, quality, size and date — if the
-        history is on. It is on by default and can be turned off or cleared in the settings.
-        Downloads from private (incognito) windows are never added.
+        A history of your downloads — the file name and where it was saved, the title, site and
+        page address, the video's own address (so that you can download it again), its format,
+        quality and size, the date, and a small preview picture — if the history is on. It is on by default and can be turned off or
+        cleared in the settings. Downloads from private (incognito) windows are never added.
       </li>
       <li>Downloads in progress, while they are being assembled.</li>
     </ul>
@@ -90,8 +121,12 @@
     <h2 id="sends">4. What it sends, and to whom</h2>
     <ul>
       <li>
-        <strong>To the site you download from:</strong> the requests needed to fetch the video you
-        chose, made the way the site's own player makes them.
+        <strong>To the sites whose videos it finds:</strong> the requests needed to show a video in
+        the list — its playlist, for the qualities on offer; the first bytes of a file, for its
+        type and size; and, when no preview picture can be taken from the page itself, the video's
+        first few seconds — and, for the video you choose, the requests needed to download it.
+        They are made the way the site's own player makes them, with the headers it sent and the
+        cookies your browser keeps for that site. The extension does not read those cookies.
       </li>
       <li>
         <strong>To us, or anyone else: nothing.</strong> There are no accounts, no analytics, no
@@ -106,7 +141,27 @@
       does, and that request will carry no information about you or your browsing.
     </p>
 
-    <h2 id="permissions">5. Why it asks for its permissions</h2>
+    <h2 id="diagnostics">5. Diagnostics you copy</h2>
+    <p>
+      When you click Copy diagnostics, the extension puts a report about the current tab on your
+      clipboard: the page's title and address, the video addresses the extension found, the
+      servers it asked and what they answered, and the names — never the values — of any headers
+      the site's player sent. The report goes nowhere unless you paste it somewhere yourself.
+      Video addresses can contain access codes: look the report over before you post it anywhere
+      public, such as our issue tracker.
+    </p>
+
+    <h2 id="limited-use">6. How the information is used</h2>
+    <p>
+      Vision Downloader's use of the information it handles complies with the Chrome Web Store
+      User Data Policy, including the Limited Use requirements. The extension uses that
+      information only to find the videos on the pages you visit and to save the ones you choose.
+      It is never transferred or sold to anyone, never used for advertising, never used to judge
+      creditworthiness or for lending, and never read by people — it never leaves your computer
+      except in the requests to the sites described above.
+    </p>
+
+    <h2 id="permissions">7. Why it asks for its permissions</h2>
     <p>
       Videos can be on any site, so the extension can see the pages you visit; it uses that only to
       find their videos and fetch the one you choose. Its other permissions save files to your
@@ -114,23 +169,24 @@
       panel. Notifications are asked for only if you turn them on.
     </p>
 
-    <h2 id="children">6. Children</h2>
-    <p>The extension is not directed at children and collects no data from anyone.</p>
+    <h2 id="children">8. Children</h2>
+    <p>The extension is not directed at children and sends no data about anyone to us.</p>
 
-    <h2 id="rights">7. Your choices</h2>
+    <h2 id="rights">9. Your choices</h2>
     <p>
-      Everything the extension keeps is on your computer and under your control: turn the history
-      off or clear it in the settings, or remove the extension to delete everything it stored.
-      Because we hold no data about you, there is nothing for us to export or delete on request.
+      Everything the extension keeps is on your computer and under your control: close a tab to
+      drop what was read there, turn the history off or clear it in the settings, or remove the
+      extension to delete everything it stored. Because we hold no data about you, there is
+      nothing for us to export or delete on request.
     </p>
 
-    <h2 id="changes">8. Changes to this policy</h2>
+    <h2 id="changes">10. Changes to this policy</h2>
     <p>
       If we change this policy, we will update it here, with a new "Last updated" date, before the
       version of the extension it applies to is published.
     </p>
 
-    <h2 id="contact">9. Contact us</h2>
+    <h2 id="contact">11. Contact us</h2>
     <p>Questions or concerns about this Privacy Policy? Please reach out:</p>
     <ul>
       <li>Email: <a href="mailto:davinci.dalhi@gmail.com?subject=Vision%20Downloader%20Privacy">davinci.dalhi@gmail.com</a></li>
